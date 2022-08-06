@@ -13,4 +13,11 @@ class Solver
         return n * factorial(n - 1)
     end
 
+    def reverse(word)
+        return word.reverse
+    end
+
 end
+
+solver = Solver.new
+print solver.reverse("hello");
