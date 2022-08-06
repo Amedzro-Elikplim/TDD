@@ -17,7 +17,19 @@ class Solver
         return word.reverse
     end
 
+    def fizzbuzz(n)
+        if n % 3 == 0 and n % 5 == 0
+            return "fizzbuzz"
+        elsif n % 3 == 0
+            return "fizz"
+        elsif n % 5 == 0
+            return "buzz"
+        else
+            return n
+        end
+    end
+
 end
 
 solver = Solver.new
-print solver.reverse("hello");
+print solver.fizzbuzz(7);
