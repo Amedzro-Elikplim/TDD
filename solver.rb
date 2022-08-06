@@ -1,29 +1,30 @@
 class Solver
-  def factorial(n)
-    if (n < 0)
-      throw "Negative value not allowed"
-    end
+  def factorial(num)
+    throw 'Negative number not allowed' if num.negative?
 
-    if (n == 1)
-      return 1
-    end
+    return 1 if num.eql? 1
 
-    return n * factorial(n - 1)
+    num * factorial(num - 1)
   end
 
   def reverse(word)
-    return word.reverse
+    word.reverse
   end
 
-  def fizzbuzz(n)
-    if (n % 3).zero? and (n % 5).zero?
-      "fizzbuzz"
-    elsif (n % 3).zero?
-      "fizz"
-    elsif (n % 5).zero?
-      "buzz"
+  def fizzbuzz(num)
+    if (num % 3).zero? and (num % 5).zero?
+      'fizzbuzz'
+    elsif (num % 3).zero?
+      'fizz'
+    elsif (num % 5).zero?
+      'buzz'
     else
-      n
+      num
     end
   end
 end
+
+solver = Solver.new
+print solver.factorial(4)
+print solver.reverse('hello')
+print solver.fizzbuzz(15)
